@@ -5,5 +5,8 @@
   "Packages": [
     "./..."
   ],
-  "Deps":[]
+  "Deps":[
+    "cors":"github.com/go-chi/cors",
+    "mux":"github.com/gorilla/mux"
+  ]
 }
