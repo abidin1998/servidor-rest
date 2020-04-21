@@ -6,7 +6,7 @@
     "./..."
   ],
   "Deps":[{
-    "cors":"github.com/go-chi/cors",
-    "mux":"github.com/gorilla/mux"}
+    "github.com/go-chi/cors",
+    "github.com/gorilla/mux"}
   ]
 }
