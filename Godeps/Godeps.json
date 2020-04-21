@@ -1,6 +1,6 @@
 {
   "importPath": "server-opwp",
-  "GoVersion": "go1.5",
+  "GoVersion": "go1.14",
   "GodepVersion":"v75",
   "Packages": [
     "./..."
