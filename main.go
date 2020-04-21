@@ -3,6 +3,7 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"os"
 	"net/http"
   "github.com/go-chi/cors"
   "github.com/gorilla/mux"
@@ -111,8 +112,11 @@ func main() {
 //    getperfil(w)
 //  }
 //)
+	port := os.Getenv("PORT")
 
-
-  http.ListenAndServe(":4000", r)
+	if port == "" {
+		port = "4000"
+	}
+  http.ListenAndServe(":"+port, r)
 
 }
