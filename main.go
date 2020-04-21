@@ -9,7 +9,7 @@ import (
   "github.com/gorilla/mux"
 )
 
-func getperfil(url,w http.ResponseWriter, r *http.Request)  {
+func getperfil(w http.ResponseWriter, r *http.Request)  {
 	vars := mux.Vars(r)
   resp, err := http.Get("https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/"+vars["id"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
   if err != nil {
@@ -23,7 +23,7 @@ func getperfil(url,w http.ResponseWriter, r *http.Request)  {
 
   w.Write([]byte(string(b)))
 }
-func indexRoute(url,w http.ResponseWriter, r *http.Request) {
+func indexRoute(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
   resp, err := http.Get("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+vars["nombre"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
   if err != nil {
@@ -39,7 +39,7 @@ func indexRoute(url,w http.ResponseWriter, r *http.Request) {
   w.Write([]byte(string(b)))
 }
 
-func historial(url,w http.ResponseWriter, r *http.Request) {
+func historial(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
   resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/"+vars["idaccount"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
   if err != nil {
@@ -55,7 +55,7 @@ func historial(url,w http.ResponseWriter, r *http.Request) {
   w.Write([]byte(string(b)))
 }
 
-func partidainfo(url,w http.ResponseWriter, r *http.Request) {
+func partidainfo(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
   resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matches/"+vars["idmach"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
   if err != nil {
@@ -71,7 +71,7 @@ func partidainfo(url,w http.ResponseWriter, r *http.Request) {
   w.Write([]byte(string(b)))
 }
 
-func perfilinfo(url,w http.ResponseWriter, r *http.Request) {
+func perfilinfo(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
   resp, err := http.Get("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/"+vars["id"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
   if err != nil {
