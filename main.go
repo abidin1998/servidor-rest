@@ -11,7 +11,7 @@ import (
 
 func getperfil(w http.ResponseWriter, r *http.Request)  {
 	vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/"+vars["id"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/"+vars["id"]+"?api_key=RGAPI-de939aa8-9e23-4afd-8d82-76b5dc442d55")
   if err != nil {
     log.Fatal(err)
   }
@@ -25,7 +25,7 @@ func getperfil(w http.ResponseWriter, r *http.Request)  {
 }
 func indexRoute(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+vars["nombre"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+vars["nombre"]+"?api_key=RGAPI-de939aa8-9e23-4afd-8d82-76b5dc442d55")
   if err != nil {
     log.Fatal(err)
   }
@@ -41,7 +41,7 @@ func indexRoute(w http.ResponseWriter, r *http.Request) {
 
 func historial(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/"+vars["idaccount"]+"?api_key=RGAPI-2b76108a-349f-45db-bd9d-4133c9699658")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/"+vars["idaccount"]+"?api_key=RGAPI-de939aa8-9e23-4afd-8d82-76b5dc442d55")
   if err != nil {
     log.Fatal(err)
   }
