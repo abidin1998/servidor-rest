@@ -8,10 +8,11 @@ import (
   "github.com/go-chi/cors"
   "github.com/gorilla/mux"
 )
+	var url = "RGAPI-4f5c6b04-8ef5-4146-afee-403e3623993a"
 
 func getperfil(w http.ResponseWriter, r *http.Request)  {
 	vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/"+vars["id"]+"?api_key=RGAPI-7115f880-7ceb-4bb4-9753-baf0457704a6")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/"+vars["id"]+"?api_key="+url)
   if err != nil {
     log.Fatal(err)
   }
@@ -25,7 +26,7 @@ func getperfil(w http.ResponseWriter, r *http.Request)  {
 }
 func indexRoute(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+vars["nombre"]+"?api_key=RGAPI-7115f880-7ceb-4bb4-9753-baf0457704a6")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+vars["nombre"]+"?api_key="+url)
   if err != nil {
     log.Fatal(err)
   }
@@ -41,7 +42,7 @@ func indexRoute(w http.ResponseWriter, r *http.Request) {
 
 func historial(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/"+vars["idaccount"]+"?api_key=RGAPI-7115f880-7ceb-4bb4-9753-baf0457704a6")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/"+vars["idaccount"]+"?api_key"+url)
   if err != nil {
     log.Fatal(err)
   }
@@ -57,7 +58,7 @@ func historial(w http.ResponseWriter, r *http.Request) {
 
 func partidainfo(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matches/"+vars["idmach"]+"?api_key=RGAPI-7115f880-7ceb-4bb4-9753-baf0457704a6")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matches/"+vars["idmach"]+"?api_key="+url)
   if err != nil {
     log.Fatal(err)
   }
@@ -73,7 +74,7 @@ func partidainfo(w http.ResponseWriter, r *http.Request) {
 
 func perfilinfo(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/"+vars["id"]+"?api_key=RGAPI-7115f880-7ceb-4bb4-9753-baf0457704a6")
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/"+vars["id"]+"?api_key"+url)
   if err != nil {
     log.Fatal(err)
   }
