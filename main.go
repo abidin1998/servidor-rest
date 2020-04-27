@@ -42,7 +42,7 @@ func indexRoute(w http.ResponseWriter, r *http.Request) {
 
 func historial(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/"+vars["idaccount"]+"?api_key"+url)
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account/"+vars["idaccount"]+"?api_key="+url)
   if err != nil {
     log.Fatal(err)
   }
@@ -74,7 +74,7 @@ func partidainfo(w http.ResponseWriter, r *http.Request) {
 
 func perfilinfo(w http.ResponseWriter, r *http.Request) {
   vars := mux.Vars(r)
-  resp, err := http.Get("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/"+vars["id"]+"?api_key"+url)
+  resp, err := http.Get("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/"+vars["id"]+"?api_key="+url)
   if err != nil {
     log.Fatal(err)
   }
