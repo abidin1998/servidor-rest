@@ -1,0 +1,1 @@
+http://ddragon.leagueoflegends.com/cdn/{version}/img/profileicon/{profileiconid}.png

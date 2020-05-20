@@ -8,7 +8,7 @@ import (
   "github.com/go-chi/cors"
   "github.com/gorilla/mux"
 )
-	var url = "RGAPI-4f5c6b04-8ef5-4146-afee-403e3623993a"
+	var url = "RGAPI-d3b24291-1e7e-46a8-a561-0268e10ce5d7"
 
 func getperfil(w http.ResponseWriter, r *http.Request)  {
 	vars := mux.Vars(r)
